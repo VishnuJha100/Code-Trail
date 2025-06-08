@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const ServiceCards = (props) => {
   return (
@@ -13,7 +14,9 @@ const ServiceCards = (props) => {
       {/* Line */}
       <div className="h-0.5 mx-4 my-4 bg-gray-800"></div>
       {/* Button */}
-      <button className="bg-orange-200 max-w-50 mx-4 py-2 rounded-sm mb-4">View Roadmap</button>
+      <div className='bg-orange-200 w-2/5 flex justify-center mb-4 mx-4 rounded-md'>
+        <Link to={props.link} className='block py-2'>View Roadmap</Link>
+      </div>
     </div>
   )
 }

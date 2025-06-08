@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { assets } from '../assets/assets.js'
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import BlogCards from '../components/BlogCards.jsx';
-import ServiceCards from '../components/ServiceCards.jsx';
+import BlogCards from '../cards/BlogCards.jsx';
+import ServiceCards from '../cards/RoadmapCards.jsx';
 
 
 const Homepage = () => {
@@ -33,12 +33,12 @@ const Homepage = () => {
         <BlogCards image={assets.blog_1} author='Vishnu Jha' heading='Master Frontend Development with Code Trail’s Roadmap' />
       </div>
 
-      {/* Services */}
-      <motion.h1 ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 2 }} className='px-20 py-15 bg-white text-gray-700 text-5xl'>Services</motion.h1>
+      {/* Roadmaps */}
+      <motion.h1 ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 2 }} className='px-20 py-15 bg-white text-gray-700 text-5xl'>Roadmaps</motion.h1>
       <div className='grid grid-cols-3 gap-6 px-20'>
-        <ServiceCards image={assets.blog_1} heading='Frontend Development' />
-        <ServiceCards image={assets.blog_1} heading='Backend Development' />
-        <ServiceCards image={assets.blog_1} heading='AI / ML' />
+        <ServiceCards image={assets.blog_1} heading='Frontend Development' link={'/roadmaps/frontend'} />
+        <ServiceCards image={assets.blog_1} heading='Backend Development' link={'/roadmaps/backend'} />
+        <ServiceCards image={assets.blog_1} heading='AI / ML' link={'/roadmaps/ai-ml'} />
       </div>
 
       {/* How It Works */}

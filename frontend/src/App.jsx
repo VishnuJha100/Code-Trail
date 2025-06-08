@@ -5,6 +5,8 @@ import Signup from './pages/Signup'
 import Login from "./pages/Login"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import Roadmap from "./pages/Roadmap"
+import FrontendRoadmap from "./roadmaps/FrontendRoadmap"
 
 function App() {
 
@@ -13,12 +15,13 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Homepage />
-      {/*<Routes>
-        <Route path="/" element={ authUser ? <Homepage /> : <Navigate to='/login' /> } />
+      <Routes>
+        <Route path="/" element={ <Homepage /> } />
         <Route path="/signup" element={ !authUser ? <Signup /> : <Homepage /> } />
         <Route path="/login" element={ !authUser ? <Login /> : <Homepage /> } />
-      </Routes>*/}
+        <Route path="/roadmaps" element={<Roadmap /> } />
+        <Route path="/roadmaps/frontend" element={ <FrontendRoadmap /> } />
+      </Routes>
       <Footer />
     </div>
   )
